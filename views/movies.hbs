@@ -1,0 +1,14 @@
+<h1>This is the Cinema</h1>
+<h3>Click on the movie to check showtimes!</h3>
+<div class="cards-container">
+  {{#each moviesFromDB}}
+  {{!-- we create a card for each movie --}}
+  <div class="card">
+    <div class="card-body">
+      <img src="{{this.image}}" alt="movie poster" />
+      <h5 class="card-title">{{this.title}}</h5>
+      <a href="/movies/{{this._id}}" class="btn btn-primary">See more</a>
+    </div>
+  </div>
+  {{/each}}
+</div>

@@ -1,0 +1,20 @@
+{{!-- Display the movie details collected from de db --}}
+<div class="card details">
+ {{!--  The movieFromDB variable is passed from the route in routes/index.js --}}
+    <h1>{{movieFromDB.title}}</h1>
+    <img src="{{movieFromDB.image}}" alt="movie poster" />
+    <p>{{movieFromDB.description}}</p>
+    <h3>Director</h3>
+    <p>{{movieFromDB.director}}</p>
+    <h3>Showtimes</h3>
+    <ul>
+        {{#each movieFromDB.showtimes}}
+        {{!-- 
+        The this keyword refers to the current element in the array.
+        In this case, the current element is a string.
+         --}}
+        <li>{{this}}</li>
+        {{/each}}
+    </ul>
+    <a href="/movies">Go back</a>
+</div>
